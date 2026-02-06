@@ -1,6 +1,6 @@
-# FL-SLAM Docker Development Environment
+# LF-SLAM Docker Development Environment
 
-Docker setup for a reproducible **FL-SLAM** development container based on `jazzy-ws:dev`, with extra SLAM and computer vision dependencies preinstalled.
+Docker setup for a reproducible **LF-SLAM** development container based on `jazzy-ws:dev`, with extra SLAM and computer vision dependencies preinstalled.
 
 ## What this provides
 
@@ -24,7 +24,7 @@ Docker setup for a reproducible **FL-SLAM** development container based on `jazz
 - A local base image named `jazzy-ws:dev` available
 - Linux host with X11 available (uses `/tmp/.X11-unix`)
 - Project checked out at:
-  - `${HOME}/dev/projects/robotics/fl_slam`
+  - `${HOME}/dev/projects/robotics/lf_slam`
 
 ## Build and run
 
@@ -47,7 +47,7 @@ docker compose down
 The compose service mounts:
 
 - Project source:
-  - `${HOME}/dev/projects/robotics/fl_slam -> /home/${USER}/fl_slam`
+  - `${HOME}/dev/projects/robotics/lf_slam -> /home/${USER}/lf_slam`
 - Shared data:
   - `${HOME}/dev/shared/data -> /home/${USER}/data`
 - SSH keys (read-only):

@@ -11,11 +11,11 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ${HOME}/dev/projects/robotics/fl_slam:/home/${USER}/fl_slam
+      - ${HOME}/dev/projects/robotics/lf_slam:/home/${USER}/lf_slam
       - ${HOME}/dev/shared/data:/home/${USER}/data:rw
       - ${HOME}/.ssh:/home/${USER}/.ssh:ro
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-    working_dir: /home/${USER}/fl_slam
+    working_dir: /home/${USER}/lf_slam
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
