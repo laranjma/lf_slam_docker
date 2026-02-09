@@ -1,6 +1,7 @@
 FROM jazzy-ws:dev
 
 ARG DEBIAN_FRONTEND=noninteractive
+ARG GTSAM_BUILD_JOBS=1
 
 USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -32,7 +33,7 @@ RUN git clone --depth 1 https://github.com/borglab/gtsam.git /tmp/gtsam && \
       -DGTSAM_BUILD_PYTHON=ON \
       -DGTSAM_PYTHON_VERSION=3 \
       -DCMAKE_INSTALL_PREFIX=/usr/local && \
-    cmake --build /tmp/gtsam/build && \
+    cmake --build /tmp/gtsam/build --parallel ${GTSAM_BUILD_JOBS} && \
     cmake --install /tmp/gtsam/build && \
     rm -rf /tmp/gtsam
     
